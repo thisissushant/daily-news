@@ -22,7 +22,7 @@ export class NewsItem extends Component {
               href={newsUrl}
               rel="noreferrer"
               target="_blank"
-              className="btn btn-sm btn-primary"
+              className="btn btn-sm btn-dark"
             >
               Read More
             </a>
