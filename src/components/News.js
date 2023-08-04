@@ -40,10 +40,11 @@ export class News extends Component {
         </div>
         <div className="container d-flex justify-content-between">
           <button type="button" class="btn btn-dark">
-            Previous
+            {" "}
+            &larr; Previous
           </button>
           <button type="button" class="btn btn-dark">
-            Next
+            Next &rarr;
           </button>
         </div>
       </div>
