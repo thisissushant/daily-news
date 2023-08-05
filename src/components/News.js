@@ -30,15 +30,18 @@ export class News extends Component {
     });
   };
   handleNextClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7cd92cfda0184fe8992431c851cd0f8c=${
-      this.state.page + 1
-    }&pageSize=20`;
-    let data = await fetch(url);
-    let parseData = await data.json();
-    this.setState({
-      page: this.state.page + 1,
-      articles: parseData.articles,
-    });
+    if (this.state.page + 1 > Math.ceil(this.state.totalResult / 20)) {
+    } else {
+      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7cd92cfda0184fe8992431c851cd0f8c=${
+        this.state.page + 1
+      }&pageSize=20`;
+      let data = await fetch(url);
+      let parseData = await data.json();
+      this.setState({
+        page: this.state.page + 1,
+        articles: parseData.articles,
+      });
+    }
   };
   render() {
     return (
@@ -64,7 +67,7 @@ export class News extends Component {
           <button
             disabled={this.state.page <= 1}
             type="button"
-            class="btn btn-dark"
+            className="btn btn-dark"
             onClick={this.handlePreviousClick}
           >
             {" "}
@@ -72,7 +75,7 @@ export class News extends Component {
           </button>
           <button
             type="button"
-            class="btn btn-dark"
+            className="btn btn-dark"
             onClick={this.handleNextClick}
           >
             Next &rarr;
