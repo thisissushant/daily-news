@@ -74,6 +74,9 @@ export class News extends Component {
             &larr; Previous
           </button>
           <button
+            disabled={
+              this.state.page + 1 > Math.ceil(this.state.totalResult / 20)
+            }
             type="button"
             className="btn btn-dark"
             onClick={this.handleNextClick}
