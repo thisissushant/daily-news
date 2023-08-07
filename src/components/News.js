@@ -60,9 +60,9 @@ export class News extends Component {
     return (
       <div className="container my-3">
         <h2 className="text-center">Daily News - Top HeadLines</h2>
-        <Spinner />
+        {this.state.loading && <Spinner />}
         <div className="row">
-          {this.state.loading &&
+          {!this.state.loading &&
             this.state.articles.map((Element) => {
               return (
                 <div className="col-md-4" key={Element.url}>
