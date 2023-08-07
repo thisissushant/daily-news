@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
+import Spinner from "./Spinner";
 
 export class News extends Component {
   constructor() {
@@ -49,6 +50,7 @@ export class News extends Component {
     return (
       <div className="container my-3">
         <h2 className="text-center">Daily News - Top HeadLines</h2>
+        <Spinner />
         <div className="row">
           {this.state.articles.map((Element) => {
             return (
