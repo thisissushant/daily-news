@@ -13,25 +13,50 @@ export default class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <News pageSize={5} country="in" category="general" />
+              <News
+                key="general"
+                pageSize={5}
+                country="in"
+                category="general"
+              />
             </Route>
             <Route exact path="/business">
-              <News pageSize={5} country="in" category="business" />
+              <News
+                key="business"
+                pageSize={5}
+                country="in"
+                category="business"
+              />
             </Route>
             <Route exact path="/entertainment">
-              <News pageSize={5} country="in" category="entertainment" />
+              <News
+                key="entertainment"
+                pageSize={5}
+                country="in"
+                category="entertainment"
+              />
             </Route>
             <Route exact path="/health">
-              <News pageSize={5} country="in" category="health" />
+              <News key="health" pageSize={5} country="in" category="health" />
             </Route>
             <Route exact path="/science">
-              <News pageSize={5} country="in" category="science" />
+              <News
+                key="science"
+                pageSize={5}
+                country="in"
+                category="science"
+              />
             </Route>
             <Route exact path="/sports">
-              <News pageSize={5} country="in" category="sports" />
+              <News key="sports" pageSize={5} country="in" category="sports" />
             </Route>
             <Route exact path="/technology">
-              <News pageSize={5} country="in" category="technology" />
+              <News
+                key="technology"
+                pageSize={5}
+                country="in"
+                category="technology"
+              />
             </Route>
           </Switch>
         </Router>
