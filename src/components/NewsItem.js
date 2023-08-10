@@ -18,10 +18,11 @@ export class NewsItem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{description}...</p>
-            <p class="card-text">
-              <small class="text-body-secondary">
+            <p className="card-text">
+              <small className="text-body-secondary">
                 {" "}
-                By {author} on {date} 3 mins ago
+                By {!author ? "Unknown" : author} on{" "}
+                {new Date(date).toGMTString()}
               </small>
             </p>
             <a
