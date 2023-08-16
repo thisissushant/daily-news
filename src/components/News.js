@@ -28,7 +28,7 @@ export class News extends Component {
   }
 
   async updateNews() {
-    const url = `https://newsapi.org/v2/top-Headliness?country=${this.props.country}&category=${this.props.category}&apiKey=7cd92cfda0184fe8992431c851cd0f8c&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=7cd92cfda0184fe8992431c851cd0f8c&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parseData = await data.json();
@@ -40,7 +40,7 @@ export class News extends Component {
   }
 
   async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-Headliness?country=${this.props.country}&category=${this.props.category}&apiKey=7cd92cfda0184fe8992431c851cd0f8c&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=7cd92cfda0184fe8992431c851cd0f8c&page=1&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parseData = await data.json();
@@ -62,7 +62,7 @@ export class News extends Component {
     return (
       <div className="container my-3">
         <h2 className="text-center">
-          Headlines - Top {this.cfl(this.props.category)} Headliness
+          Headline - Top {this.cfl(this.props.category)} Headlines
         </h2>
         {this.state.loading && <Spinner />}
         <div className="row">
