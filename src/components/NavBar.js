@@ -6,8 +6,15 @@ export default class NavBar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/#">
-              Headlines
+            <Link className="navbar-brand" href="#">
+              <img
+                src="./favicon.png"
+                alt=""
+                width="24"
+                height="24"
+                class="d-inline-block align-text-top"
+              />
+              ' Headlines
             </Link>
             <button
               className="navbar-toggler"
