@@ -24,7 +24,7 @@ export class News extends Component {
       loading: false,
       page: 1,
     };
-    document.title = `${this.cfl(this.props.category)} - Daily News`;
+    document.title = `${this.cfl(this.props.category)} - Headline`;
   }
 
   async updateNews() {
@@ -62,7 +62,7 @@ export class News extends Component {
     return (
       <div className="container my-3">
         <h2 className="text-center">
-          Daily News - Top Headlines From {this.cfl(this.props.category)}
+          Headline - Top {this.cfl(this.props.category)} Headlines
         </h2>
         {this.state.loading && <Spinner />}
         <div className="row">
