@@ -8,7 +8,7 @@ const News = (props) => {
   const [loading, setloading] = useState(true);
   const [page, setpage] = useState(1);
   const [totalResult, settotalResult] = useState(0);
-  //document.title = `${this.cfl(props.category)} - Headlines`;
+  //document.title = `${cfl(props.category)} - Headlines`;
 
   const cfl = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -39,8 +39,8 @@ const News = (props) => {
     updateNews();
   };
 
-  fetchMoreData = async () => {
-    this.setState({ page: this.state.page + 1 });
+  const fetchMoreData = async () => {
+    setpage(page + 1);
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=7cd92cfda0184fe8992431c851cd0f8c&page=1&pageSize=${props.pageSize}`;
     let data = await fetch(url);
     let parseData = await data.json();
@@ -50,12 +50,12 @@ const News = (props) => {
   return (
     <div className="container my-3">
       <h2 className="text-center">
-        Headline - Top {this.cfl(props.category)} Headlines
+        Headline - Top {cfl(props.category)} Headlines
       </h2>
-      {this.state.loading && <Spinner />}
+      {loading && <Spinner />}
       <div className="row">
-        {!this.state.loading &&
-          this.state.articles.map((Element) => {
+        {loading &&
+          articles.map((Element) => {
             return (
               <div className="col-md-4" key={Element.url}>
                 <NewsItem
@@ -74,22 +74,19 @@ const News = (props) => {
       </div>
       <div className="container d-flex justify-content-between">
         <button
-          disabled={this.state.page <= 1}
+          disabled={page <= 1}
           type="button"
           className="btn btn-dark"
-          onClick={this.handlePreviousClick}
+          onClick={handlePreviousClick}
         >
           {" "}
           &larr; Previous
         </button>
         <button
-          disabled={
-            this.state.page + 1 >
-            Math.ceil(this.state.totalResult / props.pageSize)
-          }
+          disabled={page + 1 > Math.ceil(totalResult / props.pageSize)}
           type="button"
           className="btn btn-dark"
-          onClick={this.handleNextClick}
+          onClick={handleNextClick}
         >
           Next &rarr;
         </button>
