@@ -21,7 +21,7 @@ export default class App extends Component {
           <NavBar />
           <LoadingBar
             height={3}
-            color="#f11946"
+            color=" #66ff66"
             progress={this.state.progress}
           />
           <Routes>
