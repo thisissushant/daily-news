@@ -56,6 +56,7 @@ const News = (props) => {
         Headline - Top {cfl(props.category)} Headlines
       </h2>
       {loading && <Spinner />}
+
       <InfiniteScroll
         dataLength={articles.length}
         next={fetchMoreData}
@@ -63,23 +64,22 @@ const News = (props) => {
         loading={<Spinner />}
       ></InfiniteScroll>
       <div className="row">
-        {loading &&
-          articles.map((Element) => {
-            return (
-              <div className="col-md-4" key={Element.url}>
-                <NewsItem
-                  title={Element.title ? Element.title.slice(0, 45) : ""}
-                  description={
-                    Element.description ? Element.description.slice(0, 83) : ""
-                  }
-                  imageUrl={Element.urlToImage}
-                  newsUrl={Element.url}
-                  author={Element.author}
-                  date={Element.publishedAt}
-                />
-              </div>
-            );
-          })}
+        {articles.map((Element) => {
+          return (
+            <div className="col-md-4" key={Element.url}>
+              <NewsItem
+                title={Element.title ? Element.title.slice(0, 45) : ""}
+                description={
+                  Element.description ? Element.description.slice(0, 83) : ""
+                }
+                imageUrl={Element.urlToImage}
+                newsUrl={Element.url}
+                author={Element.author}
+                date={Element.publishedAt}
+              />
+            </div>
+          );
+        })}
       </div>
       <div className="container d-flex justify-content-between">
         <button
