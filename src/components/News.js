@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const News = (props) => {
   const [articles, setarticles] = useState([]);
@@ -55,6 +56,12 @@ const News = (props) => {
         Headline - Top {cfl(props.category)} Headlines
       </h2>
       {loading && <Spinner />}
+      <InfiniteScroll
+        dataLength={articles.length}
+        next={fetchMoreData}
+        hasMore={articles.length !== totalResult}
+        loading={<Spinner />}
+      ></InfiniteScroll>
       <div className="row">
         {loading &&
           articles.map((Element) => {
