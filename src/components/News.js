@@ -29,6 +29,7 @@ const News = (props) => {
   };
   useEffect(() => {
     updateNews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const handlePreviousClick = async () => {
     setpage(page - 1);
@@ -47,6 +48,7 @@ const News = (props) => {
     setarticles(articles.concat(parseData.articles));
     settotalResult(parseData.totalResult);
   };
+
   return (
     <div className="container my-3">
       <h2 className="text-center">
