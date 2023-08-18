@@ -52,7 +52,7 @@ const News = (props) => {
 
   return (
     <div className="container my-3">
-      <h2 className="text-center">
+      <h2 className="text-center" style={{ marginTop: "90px" }}>
         Headline - Top {cfl(props.category)} Headlines
       </h2>
       {loading && <Spinner />}
