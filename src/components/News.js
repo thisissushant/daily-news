@@ -9,8 +9,6 @@ const News = (props) => {
   const [loading, setloading] = useState(true);
   const [page, setpage] = useState(1);
   const [totalResult, settotalResult] = useState(0);
-  //document.title = `${cfl(props.category)} - Headlines`;
-
   const cfl = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -29,6 +27,7 @@ const News = (props) => {
     props.setProgress(100);
   };
   useEffect(() => {
+    document.title = `${cfl(props.category)} - Headlines`;
     updateNews();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
