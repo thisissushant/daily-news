@@ -31,14 +31,6 @@ const News = (props) => {
     updateNews();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const handlePreviousClick = async () => {
-    setpage(page - 1);
-    updateNews();
-  };
-  const handleNextClick = async () => {
-    setpage(page + 1);
-    updateNews();
-  };
 
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=${
@@ -86,25 +78,7 @@ const News = (props) => {
           );
         })}
       </div>
-      <div className="container d-flex justify-content-between">
-        <button
-          disabled={page <= 1}
-          type="button"
-          className="btn btn-dark"
-          onClick={handlePreviousClick}
-        >
-          {" "}
-          &larr; Previous
-        </button>
-        <button
-          disabled={page + 1 > Math.ceil(totalResult / props.pageSize)}
-          type="button"
-          className="btn btn-dark"
-          onClick={handleNextClick}
-        >
-          Next &rarr;
-        </button>
-      </div>
+      <div className="container d-flex justify-content-between"></div>
     </div>
   );
 };

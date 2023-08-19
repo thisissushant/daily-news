@@ -2,9 +2,14 @@ import React from "react";
 
 const NewsItem = (props) => {
   let { title, description, imageUrl, newsUrl, author, date } = props;
+  const mystyle = {
+    width: "100%",
+    height: "15vw",
+    objectFit: "cover",
+  };
   return (
     <div className="my-3">
-      <div className="card">
+      <div className="card" style={{ mystyle }}>
         <img
           src={
             !imageUrl
