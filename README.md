@@ -43,12 +43,12 @@ Follow these steps to set up and run the News React App on your local machine:
 1. **Clone this repository to your local machine:**
 
    ```bash
-   git clone https://github.com/thisissushant/news-react-app.git
+   git clone https://github.com/thisissushant/daily-news.git
 
 2. **Navigate to the project folder:**
 
    ```bash
-     cd news-react-app
+     cd daily-news
    
 3. **Install project dependencies:**
 
