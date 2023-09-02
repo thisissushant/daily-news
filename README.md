@@ -12,7 +12,7 @@
 
 ## Description
 
-The News React App is a web application built with React.js that allows users to browse and read the latest news articles from a news API. It provides a user-friendly interface for accessing news articles, complete with article titles, descriptions, images, authors, and publication dates.
+Headlines is a web application built with React.js that allows users to browse and read the latest news articles from a news API. It provides a user-friendly interface for accessing news articles, complete with article titles, descriptions, images, authors, and publication dates.
 
 ## Features
 
