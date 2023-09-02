@@ -1,4 +1,4 @@
-# News App
+# Headlines
 
 ![Screenshot 2023-09-02 at 9 43 58 AM](https://github.com/thisissushant/daily-news/assets/82133186/b028d49b-1235-4d2f-a632-7c26dbd6c190)
 
