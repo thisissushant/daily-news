@@ -16,7 +16,7 @@ const NewsItem = (props) => {
               ? "https://www.hindustantimes.com/ht-img/img/2023/08/01/1600x900/Nationalist-Congress-Party-leaders-Ajit-Pawar--lef_1690868092734.jpg"
               : imageUrl
           }
-          className="card-img-top"
+          className="card-img-top h-100 w-100"
           alt="..."
         />
         <div className="card-body">
